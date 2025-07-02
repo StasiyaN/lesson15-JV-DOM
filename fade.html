@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление с анимацией</title>
+    <style>
+        #box {
+            background-color: lightcoral;
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            transition: opacity 0.5s ease;
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">Этот блок будет удалён</div>
+<button id="deleteBtn">Удалить блок</button>
+
+<script>
+    const box = document.getElementById('box');
+    const deleteBtn = document.getElementById('deleteBtn');
+
+    deleteBtn.addEventListener('click', () => {
+        // 1. Добавляем класс с анимацией
+        box.classList.add('fade-out');
+
+        // 2. Ждём завершения анимации, затем удаляем элемент
+        box.addEventListener('transitionend', () => {
+            box.remove(); // Современно. Можно также: box.parentNode.removeChild(box);
+        });
+    });
+</script>
+
+</body>
+</html>
