@@ -79,8 +79,17 @@ removeDiv.parentNode.removeChild(removeDiv);
 const removeHeader = document.getElementById('header');
 removeHeader.remove();
 
+//Работа с CSS через JavaScript
+//style: Позволяет изменять стили элементов.
+const wikiLinkCss = document.getElementById('wikipedia');
+wikiLinkCss.style.color = 'red';
+wikiLinkCss.style.fontSize = '2em';
 
-
+//Добавление и удаление классов:
+//
+// classList.add: Добавляет класс к элементу.
+// classList.remove: Удаляет класс у элемента.
+// classList.toggle: Переключает класс у элемента.
 
 
 
